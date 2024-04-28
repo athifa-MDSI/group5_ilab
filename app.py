@@ -1,6 +1,5 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-from streamlit_option_menu import option_menu
 
 # Importing page functions from different modules
 from data_visualisation.bowel_cancer.temporal import temporal_page_bc as bowel_temporal_app
@@ -74,9 +73,9 @@ def main():
             if analysis_type == "Temporal":
                 bowel_temporal_app()
             elif analysis_type == "Demographic":
-                demographic_page_bc()  # Assume you have this function defined
+                demographic_page_bc()
             elif analysis_type == "Geographic":
-                geographical_tab_bc()  # Assume you have this function defined
+                geographical_tab_bc()
 
         elif cancer_type == "Breast Cancer":
             analysis_type = option_menu(None, ["Temporal", "Demographic", "Geographic"],
@@ -85,9 +84,9 @@ def main():
             if analysis_type == "Temporal":
                 breast_temporal_app()
             elif analysis_type == "Demographic":
-                demographic_page_brc()  # Assume you have this function defined
+                demographic_page_brc()
             elif analysis_type == "Geographic":
-                geographical_tab_brc()  # Assume you have this function defined
+                geographical_tab_brc()
 
         elif cancer_type == "Cervical Cancer":
             analysis_type = option_menu(None, ["Temporal", "Demographic", "Geographic"],
@@ -96,9 +95,9 @@ def main():
             if analysis_type == "Temporal":
                 cervical_temporal_app()
             elif analysis_type == "Demographic":
-                demographic_page_cc()  # Assume you have this function defined
+                demographic_page_cc()
             elif analysis_type == "Geographic":
-                geographical_tab_cc()  # Assume you have this function defined
+                geographical_tab_cc()
 
     elif top_level_selection == "Machine Learning Prediction":
         # Placeholder for machine learning prediction page
