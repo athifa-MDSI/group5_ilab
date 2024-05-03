@@ -14,6 +14,10 @@ from data_visualisation.bowel_cancer.demographic import demographic_page_bc
 from data_visualisation.breast_cancer.demographic import demographic_page_brc  
 from data_visualisation.cervical_cancer.demographic import demographic_page_cc
 
+from machine_learning.models.cervical_cancer import cervical_cancer
+from machine_learning.models.breast_cancer import breast_cancer
+from machine_learning.models.bowel_cancer import bowel_cancer 
+
 def show_home():
     st.write("""
     # Welcome to the Cancer Screening Analysis Tool
@@ -100,8 +104,17 @@ def main():
                 geographical_tab_cc()
 
     elif top_level_selection == "Machine Learning Prediction":
-        # Placeholder for machine learning prediction page
-        st.write("Machine Learning Prediction will be here")
-
+            # Placeholder for machine learning prediction page
+            #st.write("Machine Learning Prediction will be here")
+            # Second-level horizontal menu for cancer types
+         predictive_model_type = option_menu(None, ["Cervical Cancer", "Breast Cancer", "Bowel Cancer" ],
+                                  icons=['clipboard2-pulse', 'clipboard2-plus', 'clipboard2-pulse-fill'],
+                                  menu_icon="cast", default_index=0, orientation="horizontal")
+         if predictive_model_type == "Cervical Cancer":
+           cervical_cancer()
+         elif predictive_model_type == "Breast Cancer":
+            breast_cancer()
+         elif predictive_model_type == "Bowel Cancer":
+            bowel_cancer()
 if __name__ == "__main__":
     main()
