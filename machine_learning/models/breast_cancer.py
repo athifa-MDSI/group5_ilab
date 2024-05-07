@@ -3,17 +3,12 @@ import pandas as pd
 import pickle
 from joblib import load
 from sklearn.preprocessing import StandardScaler
-import streamlit as st
-import pandas as pd
-from joblib import load
 import pydeck as pdk
 import numpy as np
 import matplotlib.pyplot as plt
 import altair as alt
 import folium
-import streamlit as st
 from xgboost import XGBRegressor
-import folium
 from folium.plugins import MarkerCluster
 from streamlit_folium import folium_static
 from machine_learning.models.breast_cancer_inputvalues import breastCan_input_values
